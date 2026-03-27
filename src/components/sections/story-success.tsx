@@ -1,17 +1,10 @@
 "use client"
 
 import Image from "next/image"
-import { useEffect, useState } from "react"
 
-import { getDefaultQnhuImage, pickRandomQnhuImage } from "@/helpers/qnhu-images"
+import { SECTION_STORY_IMAGE } from "@/helpers/qnhu-images"
 
 export const SectionStorySuccess = () => {
-	const [imageSrc, setImageSrc] = useState(getDefaultQnhuImage())
-
-	useEffect(() => {
-		setImageSrc(pickRandomQnhuImage())
-	}, [])
-
 	return (
 		<>
 			<section className="items-center bg-[#1b1310] py-12">
@@ -55,7 +48,7 @@ export const SectionStorySuccess = () => {
 										<div className="flex items-center space-x-6 lg:space-x-8">
 											<Image
 												alt=""
-												src={imageSrc}
+												src={SECTION_STORY_IMAGE}
 												width={100}
 												height={100}
 												className="h-full w-full object-cover object-center rounded-3xl shadow-2xl"

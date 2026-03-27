@@ -1,3 +1,7 @@
+/**
+ * Danh sách ảnh qnhu có thật trong `public/images/` (không random, không 404).
+ * File trong repo: qnnhu-07.jpg (chữ nn) — giữ đúng tên file.
+ */
 export const QNHU_IMAGES = [
 	"/images/qnhu-01.png",
 	"/images/qnhu-02.png",
@@ -5,26 +9,31 @@ export const QNHU_IMAGES = [
 	"/images/qnhu-04.png",
 	"/images/qnhu-05.png",
 	"/images/qnhu-06.png",
-	"/images/qnhu-07.jpg",
+	"/images/qnnhu-07.jpg",
 	"/images/qnhu-08.jpg"
 ] as const
 
 export type QnhuImageSrc = (typeof QNHU_IMAGES)[number]
 
-export function getDefaultQnhuImage(): QnhuImageSrc {
-	return QNHU_IMAGES[0]
-}
+/** Blog / Tin tức — 3 ảnh cố định, không trùng trong section */
+export const SECTION_BLOG_IMAGES = [
+	"/images/qnhu-04.png",
+	"/images/qnhu-05.png",
+	"/images/qnhu-06.png"
+] as const
 
-export function getDefaultQnhuImages(count: number): QnhuImageSrc[] {
-	return QNHU_IMAGES.slice(0, Math.max(0, Math.min(count, QNHU_IMAGES.length)))
-}
+/** Sự kiện — 3 ảnh cố định, không trùng blog & không trùng thumbnail Giới thiệu (01–03) */
+export const SECTION_EVENT_IMAGES = [
+	"/images/qnhu-08.jpg",
+	"/images/qnnhu-07.jpg",
+	"/images/anh11.jpg"
+] as const
 
-export function pickRandomQnhuImage(): QnhuImageSrc {
-	return QNHU_IMAGES[Math.floor(Math.random() * QNHU_IMAGES.length)]!
-}
+/** Câu chuyện thành công — 1 ảnh bên phải */
+export const SECTION_STORY_IMAGE = "/images/anh-111.jpg"
 
-export function pickQnhuImages(count: number): QnhuImageSrc[] {
-	const shuffled = [...QNHU_IMAGES].sort(() => Math.random() - 0.5)
-	return shuffled.slice(0, Math.max(0, Math.min(count, shuffled.length)))
-}
+/** Banner strip footer widget */
+export const SECTION_BANNER_FOOTER_IMAGE = "/images/qnhu-banner.png"
 
+/** Modal giới hạn IP */
+export const SECTION_LIMIT_IP_IMAGE = "/images/qnhu-01.png"

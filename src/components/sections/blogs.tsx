@@ -2,18 +2,11 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useState } from "react"
 
-import { getDefaultQnhuImages, pickQnhuImages } from "@/helpers/qnhu-images"
+import { SECTION_BLOG_IMAGES } from "@/helpers/qnhu-images"
 
 export const SectionBlogs = () => {
-	const [images, setImages] = useState(getDefaultQnhuImages(3))
-
-	useEffect(() => {
-		setImages(pickQnhuImages(3))
-	}, [])
-
-	const [img1, img2, img3] = images
+	const [img1, img2, img3] = SECTION_BLOG_IMAGES
 
 	return (
 		<>

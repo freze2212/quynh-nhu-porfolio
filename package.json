@@ -4,13 +4,15 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbopack",
-		"build": "next build",
+		"dev:webpack": "next dev",
+		"build": "node -e \"require('fs').rmSync('.next', { recursive: true, force: true })\" && next build",
 		"start": "next start",
+		"preview": "npx --yes serve@latest out",
 		"lint": "next lint",
 		"format": "prettier --write .",
-		"prepare": "husky",
+		"prepare": "node -e \"if (process.env.CI !== 'true' && process.env.CF_PAGES !== '1') { require('child_process').execSync('husky', { stdio: 'inherit' }) }\"",
 		"svgr": "svgr --typescript --icon --title-prop --ref --no-prettier --out-dir src/components/icons src/assets/icons",
-		"static": "next build && next export"
+		"static": "npm run build"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": [

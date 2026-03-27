@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import { useEffect, useState } from "react"
 
 import {
 	Dialog,
@@ -12,7 +11,7 @@ import {
 	DialogTitle
 } from "@/components/ui/dialog"
 
-import { getDefaultQnhuImage, pickRandomQnhuImage } from "@/helpers/qnhu-images"
+import { SECTION_LIMIT_IP_IMAGE } from "@/helpers/qnhu-images"
 
 interface LimitIpProps {
 	children: React.ReactNode
@@ -33,11 +32,6 @@ export const LimitIp = ({
 	onClose
 }: LimitIpProps) => {
 	const router = useRouter()
-	const [imageSrc, setImageSrc] = useState(getDefaultQnhuImage())
-
-	useEffect(() => {
-		setImageSrc(pickRandomQnhuImage())
-	}, [])
 	const onClick = () => {
 		router.push("/")
 	}
@@ -57,7 +51,7 @@ export const LimitIp = ({
 						<DialogDescription>
 							{description}
 							<Image
-								src={imageSrc}
+								src={SECTION_LIMIT_IP_IMAGE}
 								width={640}
 								height={480}
 								alt="kjc"
