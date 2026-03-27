@@ -1,0 +1,61 @@
+"use client"
+
+import { useState } from "react"
+
+import { stackData } from "@/data/stack-data"
+
+import { LimitIp } from "./LimitIp"
+
+export const Countries = () => {
+	const [isOpen, setIsOpen] = useState<boolean>(false)
+	const onCloseModal = () => {
+		setIsOpen(false)
+	}
+
+	const handleRedirect = (isLimit: boolean, url: string = "") => {
+		if (isLimit) {
+			setIsOpen(isLimit)
+		} else {
+			window.open(url, "_blank", "noopener,noreferrer")
+		}
+	}
+
+	return (
+		<>
+			<section className="flex overflow-hidden relative flex-col col-span-1 gap-10 justify-between items-center md:col-span-2 xl:col-span-8">
+				<div className="flex relative justify-center items-center">
+					<div className="flex flex-wrap justify-center items-center gap-y-3 gap-x-8 sm:gap-x-16 sm:gap-y-14">
+						<LimitIp
+							title=""
+							description=""
+							mode="modal"
+							isOpen={isOpen}
+							onClose={onCloseModal}
+						>
+							<></>
+						</LimitIp>
+
+						{stackData.map((item) => (
+							<button
+								value={item.name}
+								onClick={() => {
+									handleRedirect(item.isLimit, item.url)
+								}}
+								key={item.name}
+							>
+								<article title={item.name}>
+									<figure className="flex flex-col gap-3 justify-center items-center w-[87px] h-[125px] sm:w-[137px] sm:h-[183px]">
+										{item.icon}
+										<figcaption className="flex justify-center items-center sm:text-xl text-base font-medium text-center text-black">
+											{item.title}
+										</figcaption>
+									</figure>
+								</article>
+							</button>
+						))}
+					</div>
+				</div>
+			</section>
+		</>
+	)
+}
