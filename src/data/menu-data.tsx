@@ -4,12 +4,12 @@ export const menuData = [
 	{
 		id: 1,
 		title: "Trang chủ",
-		link: "http://kieutrinhmacao.com/"
+		link: "https://quynh-nhu-porfolio.pages.dev/"
 	},
 	{
 		id: 2,
 		title: "Giới thiệu",
-		link: "http://kieutrinhmacao.com/"
+		link: "https://quynh-nhu-porfolio.pages.dev/"
 	},
 	// {
 	// 	id: 3,
@@ -19,7 +19,7 @@ export const menuData = [
 	{
 		id: 4,
 		title: "Công thức Baccarat & Chiến lược vốn",
-		link: "http://kieutrinhmacao.com/"
+		link: "https://quynh-nhu-porfolio.pages.dev/"
 	},
 	// {
 	// 	id: 5,
@@ -29,7 +29,7 @@ export const menuData = [
 	{
 		id: 6,
 		title: "Câu chuyện thành công",
-		link: "http://kieutrinhmacao.com/"
+		link: "https://quynh-nhu-porfolio.pages.dev/"
 	},
 	// {
 	// 	id: 7,
@@ -44,6 +44,6 @@ export const menuData = [
 	{
 		id: 9,
 		title: "Telegram",
-		link: "https://t.me/KieuTrinh02199"
+		link: "https://t.me/ctquynhnhu"
 	}
 ]
