@@ -6,6 +6,13 @@ import { useEffect, useRef } from "react"
 export const MEGALIVE_VIMEO_ID = 1181845100
 export const MEGALIVE_VIMEO_ID_2 = 1181939051
 
+/** Ẩn tiêu đề / tên kênh Vimeo ở góc (UI mặc định của embed). */
+const vimeoChromeOff = {
+	title: false,
+	byline: false,
+	portrait: false
+} as const
+
 export const SectionMegaliveVimeo = () => {
 	const playerContainerRef = useRef<HTMLDivElement | null>(null)
 	const playerContainerRef2 = useRef<HTMLDivElement | null>(null)
@@ -20,7 +27,8 @@ export const SectionMegaliveVimeo = () => {
 			muted: true,
 			controls: true,
 			responsive: false,
-			width: 1920
+			width: 1920,
+			...vimeoChromeOff
 		})
 
 		player.ready().then(() => {
@@ -49,7 +57,8 @@ export const SectionMegaliveVimeo = () => {
 			muted: false,
 			controls: true,
 			responsive: false,
-			width: 1920
+			width: 1920,
+			...vimeoChromeOff
 		})
 
 		player.ready().then(() => {
