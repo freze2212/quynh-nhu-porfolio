@@ -6,7 +6,7 @@ const DEFAULT_HEIGHT = 80
 export const telegramData = [
 	{
 		name: "vukhanhvy6886",
-		link: "https://t.me/KieuTrinh02199",
+		link: "https://t.me/ctquynhnhu",
 		icon: (
 			<Image
 				src="./socials/telegram.svg"

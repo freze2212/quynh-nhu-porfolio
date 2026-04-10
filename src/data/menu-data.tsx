@@ -44,6 +44,6 @@ export const menuData = [
 	{
 		id: 9,
 		title: "Telegram",
-		link: "https://t.me/KieuTrinh02199"
+		link: "https://t.me/ctquynhnhu"
 	}
 ]

@@ -6,7 +6,7 @@ import { APP_CONFIG } from "@/constants"
 
 import { Providers } from "@/providers"
 
-import { Footer, Header } from "@/shared"
+import { FloatingTelegram, Footer, Header } from "@/shared"
 
 import "./globals.css"
 
@@ -90,6 +90,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 					<Header />
 					<main className="flex-1">{children}</main>
 					<Footer />
+					<FloatingTelegram />
 				</Providers>
 			</body>
 
