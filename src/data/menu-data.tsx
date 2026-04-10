@@ -4,12 +4,12 @@ export const menuData = [
 	{
 		id: 1,
 		title: "Trang chủ",
-		link: "http://kieutrinhmacao.com/"
+		link: "/"
 	},
 	{
 		id: 2,
-		title: "Giới thiệu",
-		link: "http://kieutrinhmacao.com/"
+		title: "Sự kiện Megalive",
+		link: "/su-kien-megalive"
 	},
 	// {
 	// 	id: 3,
@@ -19,7 +19,7 @@ export const menuData = [
 	{
 		id: 4,
 		title: "Công thức Baccarat & Chiến lược vốn",
-		link: "http://kieutrinhmacao.com/"
+		link: "/"
 	},
 	// {
 	// 	id: 5,
@@ -29,7 +29,7 @@ export const menuData = [
 	{
 		id: 6,
 		title: "Câu chuyện thành công",
-		link: "http://kieutrinhmacao.com/"
+		link: "/"
 	},
 	// {
 	// 	id: 7,

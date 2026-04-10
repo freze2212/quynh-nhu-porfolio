@@ -95,7 +95,7 @@ export const SectionEvents = () => {
 
 						<div className="mt-12 text-center">
 							<Link
-								href="#"
+								href="/su-kien-megalive"
 								className="px-8 py-4 bg-gradient-to-r from-orange-500 via-orange-500 to-yellow-500 text-white font-semibold rounded-4xl shadow-lg transform hover:scale-105 transition duration-300 ease-in-out text-lg"
 							>
 								Xem thêm

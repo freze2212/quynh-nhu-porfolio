@@ -1,4 +1,6 @@
 export { SectionAboutUs } from "./about-us"
+export { SectionMegaliveEvents } from "./megalive-events"
+export { SectionMegaliveVimeo } from "./megalive-vimeo"
 export { SectionBaccaratFormula } from "./baccarat-formula"
 export { SectionSlide } from "./slide"
 export { SectionStorySuccess } from "./story-success"

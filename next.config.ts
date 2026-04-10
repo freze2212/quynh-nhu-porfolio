@@ -10,7 +10,14 @@ const nextConfig: NextConfig = {
 	images: {
 		unoptimized: true
 	},
-	webpack(config) {
+	webpack(config, { dev }) {
+		// On Windows, persistent webpack caching under `.next/cache/webpack`
+		// can intermittently throw ENOENT and break runtime/HMR after cleaning `.next`.
+		// Disabling it in dev keeps the dev server stable.
+		if (dev) {
+			config.cache = false
+		}
+
 		config.module.rules.push({
 			test: /\.svg$/i,
 			issuer: /\.[jt]sx?$/,

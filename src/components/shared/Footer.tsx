@@ -46,12 +46,18 @@ export default function Footer() {
 								Về Quỳnh Như
 							</p>
 							<div className="flex flex-col items-start mt-5 space-y-2">
-								<p className="text-white transition-colors duration-300   hover:underline hover:cursor-pointer hover:text-amber-500">
+								<Link
+									href="/"
+									className="text-white transition-colors duration-300 hover:cursor-pointer hover:text-amber-500 hover:underline"
+								>
 									Trang chủ
-								</p>
-								<p className="text-white transition-colors duration-300   hover:underline hover:cursor-pointer hover:text-amber-500">
-									Giới thiệu
-								</p>
+								</Link>
+								<Link
+									href="/su-kien-megalive"
+									className="text-white transition-colors duration-300 hover:cursor-pointer hover:text-amber-500 hover:underline"
+								>
+									Sự kiện Megalive
+								</Link>
 								<p className="text-white transition-colors duration-300   hover:underline hover:cursor-pointer hover:text-amber-500">
 									Liên hệ
 								</p>

@@ -1,21 +1,31 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 import { Menu, Phone, X } from "lucide-react"
 
 import { useDomainConfig } from "@/contexts/DomainConfigContext"
 import { menuData } from "@/data/menu-data"
 
+function isExternalHref(href: string) {
+	return /^https?:\/\//i.test(href)
+}
+
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
+	const pathname = usePathname()
 	const { tele } = useDomainConfig()
 
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen)
 	}
+
+	useEffect(() => {
+		setIsMenuOpen(false)
+	}, [pathname])
 
 	return (
 		<header className="fixed top-0 left-0 w-full bg-[#21130d]/50 backdrop-blur-md sm:shadow-md shadow-none z-20 sm:px-4 sm:py-2 px-4 py-2">
@@ -35,18 +45,33 @@ export default function Header() {
 
 				<nav className="hidden space-x-6 md:flex items-center justify-center">
 					{menuData &&
-						menuData.map((item) => (
-							<Link
-								key={item.id}
-								href={item.title === "Telegram" ? tele : item.link}
-								className="text-white hover:text-[#d6ae5b]"
-								{...(item.title === "Telegram"
-									? { target: "_blank", rel: "noopener noreferrer" }
-									: {})}
-							>
-								{item.title}
-							</Link>
-						))}
+						menuData.map((item) => {
+							const href =
+								item.title === "Telegram" ? tele : item.link
+							if (isExternalHref(href)) {
+								return (
+									<a
+										key={item.id}
+										href={href}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-white hover:text-[#d6ae5b]"
+									>
+										{item.title}
+									</a>
+								)
+							}
+							return (
+								<Link
+									key={item.id}
+									href={href}
+									className="text-white hover:text-[#d6ae5b]"
+									prefetch
+								>
+									{item.title}
+								</Link>
+							)
+						})}
 
 					<Link
 						href="tel:0788473333"
@@ -94,18 +119,35 @@ export default function Header() {
 					<div className="absolute inset-0 z-[-5] left-0 bottom-0 bg-[#21130d] min-h-screen min-w-screen"></div>
 					<nav className="relative inset-0 left-0 top-16 min-w-full min-h-full flex-col backdrop-blur-md p-4 md:hidden flex items-center justify-between gap-2">
 						{menuData &&
-							menuData.map((item) => (
-								<Link
-									key={item.id}
-									href={item.title === "Telegram" ? tele : item.link}
-									className="py-2 text-white hover:text-[#d6ae5b]"
-									{...(item.title === "Telegram"
-										? { target: "_blank", rel: "noopener noreferrer" }
-										: {})}
-								>
-									{item.title}
-								</Link>
-							))}
+							menuData.map((item) => {
+								const href =
+									item.title === "Telegram" ? tele : item.link
+								if (isExternalHref(href)) {
+									return (
+										<a
+											key={item.id}
+											href={href}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="py-2 text-white hover:text-[#d6ae5b]"
+											onClick={() => setIsMenuOpen(false)}
+										>
+											{item.title}
+										</a>
+									)
+								}
+								return (
+									<Link
+										key={item.id}
+										href={href}
+										className="py-2 text-white hover:text-[#d6ae5b]"
+										prefetch
+										onClick={() => setIsMenuOpen(false)}
+									>
+										{item.title}
+									</Link>
+								)
+							})}
 
 						{/* <Link
 							href="tel:0704096666"

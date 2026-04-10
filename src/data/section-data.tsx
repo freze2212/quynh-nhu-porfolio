@@ -8,9 +8,9 @@ export const sectionData = [
 				description: "Khách đã kiếm được"
 			}
 		},
-		section_aboutus: {
-			title: "Giới thiệu",
-			description: "Khách đã kiếm được"
+		section_megalive: {
+			title: "Sự kiện Megalive",
+			description: "Livestream & cộng đồng"
 		}
 	}
 ]
