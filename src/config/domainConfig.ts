@@ -1,27 +1,27 @@
 export const domainConfig: Record<string, { tele: string }> = {
 	"kieutrinhmacao.com": {
-		tele: "https://t.me/kieutrinhmacao3333z"
+		tele: "https://t.me/ctquynhnhu"
 	},
 	"kieutrinhmacao.net": {
-		tele: "https://t.me/KIEUTRINHMC93XX"
+		tele: "https://t.me/ctquynhnhu"
 	},
 	"kieutrinhmacao.org": {
-		tele: "https://t.me/Kieutrinhbcr6868"
+		tele: "https://t.me/ctquynhnhu"
 	},
 	"kieutrinhmacao.info": {
-		tele: "https://t.me/Kieutrinhbcr_xx888"
+		tele: "https://t.me/ctquynhnhu"
 	},
 	"kieutrinhmacao.co": {
-		tele: "https://t.me/Trinhmacao79"
+		tele: "https://t.me/ctquynhnhu"
 	},
 	"kieutrinhmacao.biz": {
-		tele: "https://t.me/KIEUTRINHXX886898"
+		tele: "https://t.me/ctquynhnhu"
 	},
 	"kieutrinhmacao.online": {
-		tele: "https://t.me/kieutrinhmacao93"
+		tele: "https://t.me/ctquynhnhu"
 	},
 	"kieutrinhmacao.xyz": {
-		tele: "https://t.me/KieutrinhMacao9393"
+		tele: "https://t.me/ctquynhnhu"
 	}
 }
 
@@ -29,7 +29,7 @@ export const getConfigByHost = (host: string) => {
 	const hostname = host.split(":")[0] ?? host
 	return (
 		domainConfig[hostname] ?? {
-			tele: "https://t.me/kieutrinhmacao3333z"
+			tele: "https://t.me/ctquynhnhu"
 		}
 	)
 }

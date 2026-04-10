@@ -13,7 +13,7 @@ import { getConfigByHost } from "@/config/domainConfig"
 type DomainConfig = { tele: string }
 
 const defaultConfig: DomainConfig = {
-	tele: "https://t.me/kieutrinhmacao3333z"
+	tele: "https://t.me/ctquynhnhu"
 }
 
 const DomainConfigContext = createContext<DomainConfig>(defaultConfig)
