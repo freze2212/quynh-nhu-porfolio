@@ -74,11 +74,11 @@ export default function Header() {
 						})}
 
 					<Link
-						href="tel:0788473333"
+						href="tel:0989888888"
 						className="px-3 py-2 bg-gradient-to-r from-orange-500 via-orange-500 to-yellow-500 text-white font-semibold rounded-3xl shadow-lg transform hover:scale-105 transition duration-300 ease-in-out text-sm"
 					>
 						<span className="inline-flex items-center gap-2">
-							<Phone size={16} /> 078 847 3333
+							<Phone size={16} /> 098 988 8888
 						</span>
 					</Link>
 				</nav>
